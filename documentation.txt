@@ -1,0 +1,53 @@
+country
+Region
+Surface area (km2)
+Population in thousands (2017)
+"Population density (per km22017)"
+"Sex ratio (m per 100 f 2017)"                                X
+GDP: Gross domestic product (million current US$)
+"GDP growth rate (annual % const. 2005 prices)"
+GDP per capita (current US$)                                  X
+Economy: Agriculture (% of GVA)
+Economy: Industry (% of GVA)
+Economy: Services and other activity (% of GVA)
+Employment: Agriculture (% of employed)
+Employment: Industry (% of employed)
+Employment: Services (% of employed)
+Unemployment (% of labour force)
+Labour force participation (female/male pop. %)
+Agricultural production index (2004-2006=100)
+Food production index (2004-2006=100)
+International trade: Exports (million US$)
+International trade: Imports (million US$)
+International trade: Balance (million US$)
+"Balance of payments current account (million US$)"
+Population growth rate (average annual %)
+Urban population (% of total population)
+Urban population growth rate (average annual %)
+"Fertility rate total (live births per woman)"
+"Life expectancy at birth (females/malesyears)"
+"Population age distribution (0-14 / 60+ years %)"           X
+International migrant stock (000/% of total pop.)
+Refugees and others of concern to UNHCR (in thousands)
+Infant mortality rate (per 1000 live births                   X
+Health: Total expenditure (% of GDP)
+Health: Physicians (per 1000 pop.)
+Education: Government expenditure (% of GDP)
+Education: Primary gross enrol. ratio (f/m per 100 pop.)
+Education: Secondary gross enrol. ratio (f/m per 100 pop.)
+Education: Tertiary gross enrol. ratio (f/m per 100 pop.)
+Seats held by women in national parliaments %
+Mobile-cellular subscriptions (per 100 inhabitants)
+Mobile-cellular subscriptions (per 100 inhabitants)
+Individuals using the Internet (per 100 inhabitants)          X
+Threatened species (number)
+Forested area (% of land area)                                X
+CO2 emission estimates (million tons/tons per capita)         X
+"Energy production primary (Petajoules)"
+Energy supply per capita (Gigajoules)
+"Pop. using improved drinking water (urban/rural%)"
+"Pop. using improved sanitation facilities (urban/rural%)"
+Net Official Development Assist. received (% of GNI)
+
+var data = [1990 ,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020];
+  

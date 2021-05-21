@@ -7,74 +7,47 @@
 <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
 <script src="wm.js"></script>
 <script src="worlddata.js"></script>
+<script src="data.js"></script>
+<script src="main.js"></script>
+<script src="https://unpkg.com/d3-simple-slider"></script>
+<script src="rSlider.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<!-- <link rel="stylesheet" href="css/rSlider.min.css"> -->
+<!-- <script src="js/rSlider.min.js"></script> -->
 
 <!-- Create an element where the map will take place -->
 
 </head>
-<body onload="worlddata()">
+<body onload="CPV_data()">
+  <div class="row align-items-center">
+    <div class="col-sm-2"><p id="value-step"></p></div>
+    <div class="col-sm"><div id="slider-step"></div></div>
+  </div>
+  <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+
+
+  <div id="slider-range-max"></div>
+ 
+  <button id="b1995" onclick="buttons1995()">1995</button>
+  <button id="b2005" onclick="buttons1998()">1998</button>
+  <button id="b2015" onclick="buttons2001()">2001</button>
+  <button id="b1995" onclick="buttons2004()">2004</button>
+  <button id="b2005" onclick="buttons2007()">2007</button>
+  <button id="b2015" onclick="buttons2010()">2010</button>
+  <button id="b1995" onclick="buttons2013()">2013</button>
+  <button id="b2005" onclick="buttons2015()">2015</button>
+  <button id="b2015" onclick="buttons2018()">2018</button>
     <svg id="my_dataviz" width="400" height="300"></svg>
 </body>
-<script>
+</html>
 
-    // The svg
-    var svg = d3.select("svg"),
-      width = +svg.attr("width"),
-      height = +svg.attr("height");
-    
-    // Map and projection
-    var path = d3.geoPath();
-    var projection = d3.geoMercator()
-      .scale(70)
-      .center([0,20])
-      .translate([width / 2, height / 2]);
-    
-    // Data and color scale
-    var data = d3.map();
-    var colorScale = d3.scaleThreshold()
-      .domain([100000, 1000000, 10000000, 30000000, 100000000, 500000000])
-      .range(d3.schemeBlues[7]);
-    
-    // Load external data and boot
-    d3.queue()
-      .defer(d3.json, "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson")
-      .defer(d3.csv, "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world_population.csv", function(d) { data.set(d.code, +d.pop); })
-      .await(ready);
-    
-    function ready(error, topo) {
-    
-      // Draw the map
-      svg.append("g")
-        .selectAll("path")
-        .data(topo.features)
-        .enter()
-        .append("path")
-          // draw each country
-          .attr("d", d3.geoPath()
-            .projection(projection)
-          )
-
-          // set the color of each country
-          .attr("fill", function (d) {
-            d.total = data.get(d.id) || 0;
-            return colorScale(d.total);
-          })
-
-          //mouseover / mouseout
-          .on("mouseover", function(d) {
-  d3.select(this).attr("r", 10).style("fill", "red");
-})                  
-.on("mouseout", function(d) {
-  d3.select(this).attr("r", 5.5).style("fill",function(){return colorScale(d.total);});
-});
-          ;
-        }
-    
-    </script>
     <style>
         body {
-   -moz-transform: scale(1.7, 1.7);
-   zoom: 1.7;
-   zoom: 170%;
+   -moz-transform: scale(1.5, 1.5);
+   zoom: 1.5;
+   zoom: 150%;
 }
     </style>
 
