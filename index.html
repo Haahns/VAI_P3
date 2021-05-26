@@ -1,53 +1,47 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <head>
-<!-- Load d3.js -->
+
 <script src="https://d3js.org/d3.v4.js"></script>
 <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
 <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="wm.js"></script>
 <script src="worlddata.js"></script>
-<script src="data.js"></script>
 <script src="main.js"></script>
-<script src="https://unpkg.com/d3-simple-slider"></script>
-<script src="rSlider.js"></script>
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<!-- <link rel="stylesheet" href="css/rSlider.min.css"> -->
-<!-- <script src="js/rSlider.min.js"></script> -->
+<link rel="stylesheet" href="style.css">
 
-<!-- Create an element where the map will take place -->
+
+
+<!-- Källa för kartprojektionen: https://www.d3-graph-gallery.com/graph/choropleth_basic.html -->
 
 </head>
-<body onload="CPV_data()">
-  <div class="row align-items-center">
-    <div class="col-sm-2"><p id="value-step"></p></div>
-    <div class="col-sm"><div id="slider-step"></div></div>
+<body>
+  
+  <div id="year_button">
+  <button id="no1995">1995</button><br>
+  <button id="no1998">1998</button><br>
+  <button id="no2001">2001</button><br>
+  <button id="no2004">2004</button><br>
+  <button id="no2007">2007</button><br>
+  <button id="no2010">2010</button><br>
+  <button id="no2013">2013</button><br>
+  <button id="no2015">2015</button> <br>
   </div>
-  <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+  
 
 
-  <div id="slider-range-max"></div>
- 
-  <button id="b1995" onclick="buttons1995()">1995</button>
-  <button id="b2005" onclick="buttons1998()">1998</button>
-  <button id="b2015" onclick="buttons2001()">2001</button>
-  <button id="b1995" onclick="buttons2004()">2004</button>
-  <button id="b2005" onclick="buttons2007()">2007</button>
-  <button id="b2015" onclick="buttons2010()">2010</button>
-  <button id="b1995" onclick="buttons2013()">2013</button>
-  <button id="b2005" onclick="buttons2015()">2015</button>
-  <button id="b2015" onclick="buttons2018()">2018</button>
     <svg id="my_dataviz" width="400" height="300"></svg>
 </body>
+<script></script>
 </html>
+<script>
+main("no1995");
+$("button").click(function() {
+  /*var year = this.id;
+  console.log(this.id);
+  main(year); // or alert($(this).attr('id'));
+*/
+main(this.id);
 
-    <style>
-        body {
-   -moz-transform: scale(1.5, 1.5);
-   zoom: 1.5;
-   zoom: 150%;
-}
-    </style>
-
+});</script>

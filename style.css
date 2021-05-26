@@ -1,0 +1,12 @@
+body{
+    display:flex;
+flex-direction: row;
+
+-moz-transform: scale(1.8, 1.8);
+zoom: 1.8;
+zoom: 180%;
+ }
+
+ #year_button{
+     padding-right:30px;
+ }
